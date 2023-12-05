@@ -1,0 +1,56 @@
+.bg-tab {
+    background-color: rgba(3, 1, 22, 0.89);
+    margin-top: -45px;
+    height: 43px;
+}
+
+.bg-tab a {
+    color: aliceblue;
+
+    cursor: pointer;
+}
+
+.tc {
+    color: rgb(162, 160, 177);
+}
+/* list */
+.image-container {
+    position: relative;
+    height: 150px;
+    width: 220px;
+    overflow: hidden;
+}
+
+.image-container img {
+    transition: transform 0.3s;
+}
+
+.image-container:hover img {
+    transform: scale(1.2);
+}
+.font {
+  font-weight: 700;  
+}
+.pfont{
+    font-weight: 500;
+    color: brown;
+}
+.taxfont{
+    font-size: 15px;
+    text-align: right;
+    font-weight: 500;
+}
+.ratingsection{
+    width: 230px;
+}
+.categoryfont {
+    font-size: 13px;
+    width: 110px;
+    overflow: hidden;
+}
+.borderActive {
+    border-bottom: 4px solid rgb(120, 179, 179);
+    border-radius: 5px;
+    font-size:medium;
+    background-color: rgb(34, 43, 43);
+}

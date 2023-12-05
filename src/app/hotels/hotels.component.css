@@ -1,0 +1,28 @@
+/* universal */
+.cursor {
+    cursor: pointer;
+}
+/* hotel input form */
+.location-logo {
+    position: absolute;
+    left: 50px;
+    top: 203px;
+}
+input::placeholder {
+    font-weight: 600;
+    color: gray;
+}
+/* details section */
+.detailsHead {
+    font-size: 20px;
+    font-weight:600;
+}
+.detailsContent{
+    color: gray;
+}
+.booking-form {
+    position: relative;
+    top: -45px;
+    background-color: rgb(3, 3, 51);
+    color: aliceblue;
+}

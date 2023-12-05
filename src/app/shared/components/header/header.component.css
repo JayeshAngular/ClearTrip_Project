@@ -1,0 +1,49 @@
+/* universal */
+.nav-menu{
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+.active {
+    color: blue !important;
+    border-bottom: 3px solid blue;
+}
+.header{
+     background-color: #DAF3FF; 
+}
+.jayesh {
+    height: 108px;
+    margin-bottom: 38px;
+}
+/* navbar logo */
+.nav-Logo {
+    height: 40px;
+    width: 50px;
+   background: url('../../../../assets/logo/HeaderSprite.png'); 
+   background-size: 300px;  
+}
+.flight-logo {
+    background-position: -5px 0px;
+}
+.hotel-logo{
+    background-position: -73px 0px;
+}
+.homestay-logo{
+    background-position: -65px  -95px;
+}
+.trains-logo{
+    background-position: 115px -2px;
+}
+.buses-logo{
+    background-position: 60px 0px;
+}
+.cabs-logo{
+    background-position: -5px -95px;
+}
+.holiday-logo{
+    background-position: 176px 0px;
+}
+.tinsurance-logo{
+    background-position: 60px -95px;
+}
+

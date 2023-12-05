@@ -1,0 +1,145 @@
+ <!-- booking form -->
+<div class="container p-2 booking-form rounded">
+    <div class="row ms-5">
+        <h4 class="mt-4 fs-2">Search Hotels</h4>
+        <p class="fs-bold font-monospace p-2">Enjoy hassle free bookings with Cleartrip</p>
+    </div>
+    <form #hotelForm = "ngForm">
+        <div class="row border-top m-2 p-3 border-dark">
+            <div class="col-md-4 p-2">
+                <label for="city" class="form-label">Select City</label>
+                <img class="location-logo" src="../../assets/logo/location3.png" width="30px">
+                <input type="text" class="form-control ps-5 cursor" placeholder="Enter locality, landmark or city" name="cityname" [(ngModel)]="City" required>
+            </div>
+            <div class="col-md-4 p-2">
+                <div class="w-75 jayesh ms-5">
+                    <label for="date" class="form-label">Select Date</label>
+                    <input type="text" placeholder="Select Dates" class="form-control cursor"  name="selectadate" [(ngModel)]="selectedDate"   (ngModelChange)="dateChange()" bsDaterangepicker required>
+                </div>
+            </div>
+            <div class="col-md-4 p-2">
+                <label for="room" class="form-label ps-3 ms-5">Rooms</label>
+                <div class="dropdown ms-5 w-75 ps-2">
+                    <button class="btn btn-light" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-user" style="color: #000000;"></i> &nbsp; 1 Room, 2 Adults
+                    </button>
+                    <ul class="dropdown-menu cursor" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" *ngFor="let options of roomsOptArr" (click)="selectRooms(options)">{{options}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center border-top border-dark mt-2 p-2">
+            <!-- <button type="button" class="btn btn-primary px-5 m-1" routerLink="/hotels/search-hotels" [queryParams]="{city:city,checkIn:checkInDate,checkout:checkOutDate,rooms:selRooms}">Search Hotels</button> -->
+            <button type="button" class="btn btn-success px-5 m-2" routerLink="/hotels/hotel-list" [disabled]="hotelForm.invalid" [queryParams]="{city:City, checkin:checkInDate, checkout:checkOutDate, rooms:selectRooms}" (click)="searchHotel()">Search Hotels</button>
+        </div>
+    </form>
+</div>
+<!-- Hotel booking Details -->
+<div class="row p-5 m-2">
+    <div class="col-md-12">
+        <p class="detailsHead">Why book hotels online on Cleartrip?</p>
+        <p class="detailsContent">Looking for online hotel booking sites? Your search ends here. From guest houses to
+            resorts, from budget-friendly to luxury, whether for business or for leisure, Cleartrip is your go-to hotel
+            booking app. Our curated, verified list of 400000+ hotels across 28000+ cities from around the globe ensures
+            you have enough options to choose from and complete your online hotel booking at ease. Find a list of hotel
+            chains such as oyo rooms, fabhotels, treebo hotels, etc. Seamlessly book hotels in Delhi, hotels in Mumbai,
+            hotels in Bangalore, hotels in Goa and many more. <br> <br>
+            With an array of filters and sorting options, you can simplify the search for your hotel room booking. It
+            shows all the details of your preferred hotel, like description, highlights, photos, amenities, room types,
+            rates all in one place. Additional features like pay-at-hotel, express checkout and free cancellations make
+            the process of booking a hotel effortless.</p>
+    </div>
+    <div class="col-md-6 mt-4 p-2">
+        <p class="detailsHead">How to find and book hotels online on Cleartrip?</p>
+        <p class="detailsContent">With Cleartrip, booking a hotel online will get simpler..</p>
+        <ul class="px-6 pt-2 nohover">
+            <li>
+                <p class="detailsContent m-0">Click on the 'hotels' tab on the homepage</p>
+            </li>
+            <li>
+                <p class="detailsContent m-0">Type in the city/ locality/ landmark/ hotel name in the search bar</p>
+            </li>
+            <li>
+                <p class="detailsContent m-0">Fill in the check-in and check-out dates</p>
+            </li>
+            <li>
+                <p class="detailsContent m-0">Choose the number of travellers and hit enter</p>
+            </li>
+        </ul>
+        <p class="detailsContent">There you go! You can further narrow down your hotel booking search list by using
+            filters like price, star rating, traveller rating, amenities and even preferences like hill-view or couple
+            friendly hotels. For every kind of stay, Cleartrip has a hotel.</p>
+    </div>
+    <div class="col-md-6 mt-4 p-2">
+        <p class="detailsHead">How to Search for cheap hotels on Cleartrip?</p>
+        <p class="detailsContent">Cleartrip offers never-seen-before discounts on hotels, making your luxurious stay
+            pocket-friendly.</p>
+        <ul class="px-6 pt-2 nohover">
+            <li>
+                <p class="detailsContent m-0">Once you search for your preferred location or city, you can use an array
+                    of filters to refine your search.</p>
+            </li>
+            <li>
+                <p class="detailsContent m-0">Enter the price range for your hotel room booking and get options
+                    accordingly.</p>
+            </li>
+            <li>
+                <p class="detailsContent m-0">Compare, choose and complete your hotel booking by clicking on the Book
+                    Now button.</p>
+            </li>
+        </ul>
+        <p class="detailsContent">So go ahead and book that long-awaited staycation, friends trip, family holiday, or
+            just a much-needed weekend getaway! Cleartrip has got you covered.</p>
+    </div>
+    <div class="col-md-6 mt-4 p-2">
+        <p class="detailsHead">What are the best offers available for hotel booking on Cleartrip?</p>
+        <p class="detailsContent">Here are some unmissable deals on hotel bookings. Use the mentioned coupon codes when
+            you make your hotel booking and get exciting discounts.</p>
+        <ul class="px-6 pt-2 nohover">
+            <li>
+                <p class="detailsContent m-0">15% Off Upto INR 10,000/- on Domestic and International Hotels - CTHOTEL
+                </p>
+            </li>
+            <li>
+                <p class="detailsContent m-0">Upto 35% off on Hotels with AU Bank Credit Card - AUCC</p>
+            </li>
+            <li>
+                <p class="detailsContent m-0">Great deals that run all year round, so you can book whenever you wish!
+                </p>
+            </li>
+            <li>
+                <p class="detailsContent m-0">20% Off Upto INR 15,000/- on International Hotels - CTINTL</p>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-6 mt-4 p-2">
+        <p class="detailsHead">What are the benefits of booking hotels on Cleartrip?</p>
+        <p class="detailsContent">Booking hotels online with Cleartrip is as seamless as it can get.</p>
+        <ul class="px-6 pt-2 nohover">
+            <li>
+                <p class="detailsContent m-0">Diverse range of hotels - from pocket-friendly to luxury</p>
+            </li>
+            <li>
+                <p class="detailsContent m-0">Best offers using bank cards like Axis, ICICI, Kotak, Slice, Bank of
+                    Baroda, CITI, Federal, etc.</p>
+            </li>
+            <li>
+                <p class="detailsContent m-0">Wallet cashbacks on Paytm and Mobikwik</p>
+            </li>
+            <li>
+                <p class="detailsContent m-0">Exciting deals and discounts throughout the year</p>
+            </li>
+            <li>
+                <p class="detailsContent m-0">Cancellation policies in case of last minute changes</p>
+            </li>
+            <li>
+                <p class="detailsContent m-0">Upgrades on your stay</p>
+            </li>
+            <li>
+                <p class="detailsContent m-0">EMI options</p>
+            </li>
+        </ul>
+    </div>
+</div>

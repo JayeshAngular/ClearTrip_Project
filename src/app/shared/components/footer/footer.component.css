@@ -1,0 +1,36 @@
+/* footer section */
+.detailsHead {
+    font-size: 20px;
+    font-weight:600;
+}
+.detailsContent{
+    color: gray;
+}
+.social-icon{
+    float: right;
+    /* margin-right: 330px; */
+}
+.social-icon li {
+    list-style: none;
+    float: left;
+    padding: 10px;
+}
+.social-icon li p{
+    font-weight: 700;
+    font-size: 22px;
+    color: rgb(110, 110, 110);
+}
+input::placeholder {
+    font-weight: 600;
+    color: gray;
+}
+.copyright {
+    background-color: rgb(190, 189, 189);
+    height: 60px;
+    color: rgb(14, 13, 12); 
+    text-align: center;
+}
+.copyright p {
+    padding-top: 20px;
+    font-weight: 700;
+}
