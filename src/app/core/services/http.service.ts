@@ -22,8 +22,8 @@ export class HttpService {
   //   const url = this.baseurl + endPoint;
   //   return this.https.get(url,{headers:this.httpsHeaders,params:httpParams});
   // }
-  getDataFromServer(endPoint:string) {
+  getDataFromServer(endPoint:string, httpParams?: HttpParams | undefined) {
     const url = this.baseurl + endPoint;
-    return this.https.get(url,{headers:this.httpsHeaders})
+    return this.https.get(url,{headers:this.httpsHeaders,params:httpParams})
   }
 }

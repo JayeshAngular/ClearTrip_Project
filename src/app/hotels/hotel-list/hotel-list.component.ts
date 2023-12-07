@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/core/services/http.service';
 
 @Component({
@@ -14,11 +14,13 @@ export class HotelListComponent {
     checkOutDate: null,
     selectedRoom: "",
   }
+
   selectedsorttype:string="";
   hotelList: any;
   finalHotelList: any;
   hotelListCopy:any;
-  constructor(private activateRouter: ActivatedRoute, private httpSVC: HttpService) {
+
+  constructor(private activateRouter: ActivatedRoute, private httpSVC: HttpService, private router:Router) {
     this.searchHotelObj.city = this.activateRouter.snapshot.queryParamMap.get('city');
     this.searchHotelObj.checkInDate = this.activateRouter.snapshot.queryParamMap.get('checkin');
     this.searchHotelObj.checkOutDate = this.activateRouter.snapshot.queryParamMap.get('checkout');
@@ -77,4 +79,31 @@ export class HotelListComponent {
     this.finalHotelList = this.hotelListCopy;
   }
 }
+
+  // filterHotelMulti (criteria:any) {
+  //   var ratingArr: any[] = [];
+  //   var priceArr: any[] = [];
+  //   criteria.forEach((el:any) => {
+  //     if(el.type == 'RATING')
+  //     {
+  //       ratingArr  = this.hotelListCopy.filter((ele:any)=> ele.reviewSummary.cumulativeRating > criteria.filterValue)
+  //     }
+  //     if (criteria.type == 'HOTEL_PRICE_BUCKET')
+  //     {
+  //       priceArr = this.hotelListCopy.filter((ele:any)=> ele.priceDetail.discountedPrice > criteria.filterRange.min && ele.priceDetail.discountedPrice <= criteria.filterRange.max)
+  //     }
+  //   });
+  //   if(criteria.length > 0) 
+  //   {
+  //     this.hotelList = this.hotelList.concat(ratingArr,priceArr)
+  //   }
+  //   else 
+  //   {
+  //     this.hotelList = this.hotelListCopy;
+  //   }
+  // }
+
+  selectHotels(hotelId:string) {
+    this.router.navigate(['/hotels/hotel-details'],{queryParams:{id:hotelId}})
+  }
 }

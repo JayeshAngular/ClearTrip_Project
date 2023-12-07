@@ -1,17 +1,17 @@
 .bg-tab {
-    background-color: rgba(3, 1, 22, 0.89);
-    margin-top: -45px;
+    background-color: rgba(212, 228, 240, 0.89);
+    /* margin-top: -45px; */
     height: 43px;
 }
 
 .bg-tab a {
-    color: aliceblue;
+    color: rgb(0, 0, 0);
 
     cursor: pointer;
 }
 
 .tc {
-    color: rgb(162, 160, 177);
+    color: rgb(90, 88, 88);
 }
 /* list */
 .image-container {
@@ -49,8 +49,12 @@
     overflow: hidden;
 }
 .borderActive {
-    border-bottom: 4px solid rgb(120, 179, 179);
+    border-bottom: 4px solid rgb(30, 34, 34);
     border-radius: 5px;
     font-size:medium;
-    background-color: rgb(34, 43, 43);
+    /* background-color: rgb(184, 245, 245); */
+}
+.hotel-List:hover{
+    border: 1px solid blue !important;
+    cursor: pointer;
 }

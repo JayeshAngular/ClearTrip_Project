@@ -5,15 +5,22 @@
     font-weight: 500;
 }
 .active {
-    color: blue !important;
-    border-bottom: 3px solid blue;
+    color: rgb(5, 5, 77) !important;
+    border-bottom: 3px solid rgb(243, 243, 252);
 }
 .header{
-     background-color: #DAF3FF; 
+     /* background-color: #DAF3FF;   5december */
+     background-color: rgb(29, 28, 28);
 }
-.jayesh {
+.jayu {
+    opacity: 90%;
+    background-color: rgb(34, 34, 34) !important;
+    color: aliceblue !important;
+}
+.navbar-height {
     height: 108px;
-    margin-bottom: 38px;
+    border: 1px solid rgb(78, 78, 78);
+    /* margin-bottom: 38px; */
 }
 /* navbar logo */
 .nav-Logo {

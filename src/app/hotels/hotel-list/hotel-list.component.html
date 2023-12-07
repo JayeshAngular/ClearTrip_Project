@@ -1,7 +1,7 @@
 <!-- sorting menu tab -->
 <div class="container-fluid bg-tab">
     <ul class="nav w-75 m-auto justify-content-around">
-        <span class="ms-4 mt-2 fs-bold text-light">Sort By :</span>
+        <span class="ms-4 mt-2 fs-bold text-dark">Sort By :</span>
         
         <li class="nav-item">
           <a class="nav-link">Popular</a>
@@ -25,7 +25,7 @@
     </div>
 
     <div class="col-md-8">
-        <div class="ms-1 mx-1 border m-2 rounded p-2 d-flex justify-content-around" *ngFor="let item of finalHotelList">
+        <div class="ms-1 mx-1 hotel-List border m-2 rounded p-2 d-flex justify-content-around" *ngFor="let item of finalHotelList" (click)="selectHotels(item.id)">
             <div class="image-container mt-2">
                 <img [src]="item.media[0].url">
             </div>

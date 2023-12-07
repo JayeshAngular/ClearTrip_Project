@@ -6,8 +6,9 @@
             <div class="user-rating mb-3" *ngIf="filterObj.rating != undefined">
                 <h6>Rating</h6>
                 <div class="form-check" *ngFor="let item of filterObj.rating let i = index">
-                    <input class="form-check-input" type="checkbox" value="" name="ratingSelected+{{i}}" [(ngModel)]="item.isSelected" (ngModelChange)="emitData(item)" id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1">
+                    <input class="form-check-input" type="checkbox" value="" name="ratingSelected+{{i}}" [(ngModel)]="item.isSelected" (ngModelChange)="emitData(item)">
+                    <!-- <input class="form-check-input" type="checkbox" value="" name="ratingSelected+{{i}}" [(ngModel)]="item.isSelected" (ngModelChange)="emitData(item)"> -->
+                    <label class="form-check-label">
                       <p class="text-muted m-0">{{item.filterValueType}} &nbsp; {{item.filterValue}}+</p>
                     </label>
                 </div>
@@ -16,8 +17,9 @@
             <div class="price-per-night mt-2" *ngIf="filterObj.pricePerNight != undefined">
                 <h6>Price Per Night</h6>
                 <div class="form-check" *ngFor="let item of filterObj.pricePerNight let i = index">
-                    <input class="form-check-input" type="checkbox" value="" name="priceSelected+{{i}}" [(ngModel)]="item.isSelected" (ngModelChange)="emitData(item)"id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1">
+                    <input class="form-check-input" type="checkbox" value="" name="priceSelected+{{i}}" [(ngModel)]="item.isSelected" (ngModelChange)="emitData(item)">
+                    <!-- <input class="form-check-input" type="checkbox" value="" name="priceSelected+{{i}}" [(ngModel)]="item.isSelected" (ngModelChange)="emitData(item)"> -->
+                    <label class="form-check-label">
                         <p class="text-muted m-0">₹ {{item.filterRange.min}} - ₹{{item.filterRange.max}}</p>
                     </label>
                 </div>

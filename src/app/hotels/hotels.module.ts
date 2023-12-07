@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { HotelFiltersComponent } from './hotel-filters/hotel-filters.component';
+import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 
 
 
@@ -15,7 +16,8 @@ import { HotelFiltersComponent } from './hotel-filters/hotel-filters.component';
   declarations: [
     HotelsComponent,
     HotelListComponent,
-    HotelFiltersComponent
+    HotelFiltersComponent,
+    HotelDetailsComponent
   ],
   imports: [
     CommonModule,

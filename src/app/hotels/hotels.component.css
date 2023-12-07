@@ -22,7 +22,19 @@ input::placeholder {
 }
 .booking-form {
     position: relative;
-    top: -45px;
-    background-color: rgb(3, 3, 51);
+    top: 45px;
+    background-color: rgb(3, 3, 3);
+    opacity: 90%;
+    border: 1px solid rgb(59, 59, 59);
+    /* background-color: rgb(3, 3, 51); */
+    /* background-color: rgb(0, 0, 0); */
     color: aliceblue;
+}
+.hotel-main{
+    height: 600px;
+    z-index: 1;
+    background: url('https://static.vecteezy.com/system/resources/previews/014/238/335/non_2x/dark-hotel-room-with-yellow-bulb-light-free-photo.jpg')no-repeat center center/cover;
+    position: relative;
+    /* top: -75px; */
+    opacity: 90%;
 }

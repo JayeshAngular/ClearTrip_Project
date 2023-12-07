@@ -7,8 +7,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HotelFiltersComponent {
   filterObj: any;
+  selectedFilterAction:any = [];
   @Output()
   emitFilerAction:EventEmitter<any> = new EventEmitter
+
+  // @Output() 
+  // emitMultiAction:EventEmitter<any> = new EventEmitter
 
   constructor() { }
 
@@ -76,6 +80,28 @@ export class HotelFiltersComponent {
     }
   }
 
+  // emitMultiData(filterCriteria:any) {
+  //   this.selectedFilterAction = [];
+  //   if(this.filterObj.rating) 
+  //   {
+  //    var ratingArr =  this.filterObj.rating((el:any)=> el.isSelected);
+  //    if(ratingArr && ratingArr.length == 0)
+  //    {
+  //     this.selectedFilterAction.concat(ratingArr);
+  //    }
+  //   }
+  //   if(this.filterObj.pricePerNight) 
+  //   {
+  //    var priceArr =  this.filterObj.pricePerNight((el:any)=> el.isSelected);
+  //    if(priceArr && priceArr.length == 0)
+  //    {
+  //     this.selectedFilterAction.concat(priceArr);
+  //    }
+  //   }
+  //   this.selectedFilterAction.push(filterCriteria)
+  //   console.log(this.selectedFilterAction)
+  //   this.emitMultiAction.emit(this.selectedFilterAction)
+  // }
   emitData(filterCriteria:any) {
     this.emitFilerAction.emit(filterCriteria)
   }
