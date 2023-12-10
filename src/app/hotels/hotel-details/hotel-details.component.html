@@ -1,12 +1,53 @@
 <div class="container-fluid">
+    <!-- details section top -->
     <div class="row m-2 justify-content-around">
         <div class="col-md-6 mt-2">
-            <h2 class="ms-2 ">{{hotelDetails.name}}</h2>
-            <p class="text-muted fs-5 ms-2 fw-medium mb-0">{{hotelDetails.starRating}}-star hotel - {{hotelDetails.locationPersuasion[0]}}-{{hotelDetails.locationDetail.name}} </p>
+            <!-- hotel name and data -->
+            <div class="hotel-data mt-4 pb-3 border-bottom">
+                <h2 class="ms-2 ">{{hotelDetails.name}}</h2>
+            <p class="text-muted fs-5 ms-2 fw-medium">{{hotelDetails.starRating}}-star hotel - {{hotelDetails.locationPersuasion[0]}}-{{hotelDetails.locationDetail.name}} </p>
             <p class="text-muted ms-2 fw-medium mt-0">Customer rating - {{hotelDetails.reviewSummary.cumulativeRating}}/5 ({{hotelDetails.reviewSummary.totalReviewCount}} Reviews)</p>
+            </div>
+            <!-- hotel offers rooms and breakfast -->
+            <div class="row mt-4 pb-3 border-bottom hoteloffers">
+                <div class="col-md-6 rooms" >
+                    <img src="../../../assets/logo/badge-check-icon.png">
+                    <p class="phead">Best in class rooms</p>
+                    <p class="pcontent">Rooms at this property is high rated</p>
+                </div>
+                <div class="col-md-6 breakfast">
+                    <img src="../../../assets/logo/breakf.png">
+                    <p class="phead" >Free breakfast on all plans</p>
+                    <p class="pcontent">Some plans include free breakfast</p>
+                    
+                </div>
+            </div>
         </div>
+        <!-- image section top -->
         <div class="col-md-6 mt-2 p-2">
                 <img class="imgposition ms-5 border rounded-3" src={{hotelDetails.media[0].url}}>
         </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-12">
+        <h2>select rooms</h2>
+
+        <table class="table table-bordered mt-2 ">
+            <thead>
+              <tr class="table-active">
+                <th scope="col">Room Types</th>
+                <th scope="col">Options</th>
+                <th scope="col">Price</th> 
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="3">1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>  
     </div>
 </div>

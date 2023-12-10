@@ -2,3 +2,43 @@
     width: 550px;
     height: 350px;
 }
+.hoteloffers .rooms .phead{
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 300;
+    margin-left: 50px;
+    margin-top: -11px;
+}
+.hoteloffers .breakfast .phead{
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 300;
+    margin-left: 50px;
+    margin-top: -22px;
+}
+.hoteloffers .breakfast .pcontent{
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: grey;
+    /* margin-top: -22px; */
+}
+.hoteloffers .rooms .pcontent{
+    font-size: 16px;
+    color: grey;
+    font-weight: 600;
+    text-align: center;
+    /* margin-top: -22px; */
+}
+.hoteloffers .rooms img {
+    width: 28px;
+    position: relative;
+    top: 20px;
+    left: 15px;
+}
+.hoteloffers .breakfast img {
+    width: 40px;
+    position: relative;
+    top: 10px;
+    left: 5px;
+}

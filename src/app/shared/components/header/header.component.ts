@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+selectedAction:string="login";
+loginbuttonName:string = "Login/SignUp";
+
+getdata(data:any) {
+  this.selectedAction = data;
+  console.log(this.selectedAction)
+}
+getloggeduserData(loggeduser:any) {
+  this.loginbuttonName = loggeduser;
+}
+
 
 }

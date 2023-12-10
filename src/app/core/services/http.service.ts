@@ -21,9 +21,13 @@ export class HttpService {
   //   .set("checkOutDate",obj.checkOut)
   //   const url = this.baseurl + endPoint;
   //   return this.https.get(url,{headers:this.httpsHeaders,params:httpParams});
-  // }
+  // }   
   getDataFromServer(endPoint:string, httpParams?: HttpParams | undefined) {
     const url = this.baseurl + endPoint;
     return this.https.get(url,{headers:this.httpsHeaders,params:httpParams})
+  }
+  postDataToServer(endPoint:string, requestbody:any) {
+    const url = this.baseurl + endPoint;
+    return this.https.post(url,requestbody,{headers:this.httpsHeaders})
   }
 }

@@ -1,0 +1,35 @@
+<div class="container-fluid p-2">
+    <form [formGroup]="singUpForm" (ngSubmit)="singup()">
+        <div class="mb-3">
+            <label for="id2" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="id2" formControlName="userName">
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="userEmail">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <label for="id2" class="form-label">Mobile No.</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="id2" formControlName="mobileNumber">
+          <span class="verifyIcon" *ngIf="verifyIcon" ><img src="../../../../assets/logo/otpVerify.png" width="35px"></span>
+          <button *ngIf="!displayVerifyButton && displaygetotpbutton" class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="getOtp()" [disabled]="singUpForm.get('mobileNumber')?.invalid">Get OTP</button>
+        </div>
+        <ng-container *ngIf="displayOtpField">
+            <label for="id4" class="form-label">OTP</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="id4" [maxLength]="4" (input)="changeOtp($event)"> 
+            <button *ngIf="displayVerifyButton" class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="VerifyOtp()">Verify OTP</button>
+          </div>
+          <p class="text-muted">Time Remaining - {{otpCounter}}</p>
+        </ng-container>
+        <div class="mb-3">
+            <label for="id3" class="form-label">Password</label>
+            <input type="text" class="form-control" id="id3" formControlName="password">
+          </div>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-dark" [disabled]="singUpForm.invalid" >SingUp</button>
+            <button type="button" class="btn btn-dark" (click)="navigateToSingIn()">Login</button>
+        </div>
+      </form>   
+</div>
