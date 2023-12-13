@@ -42,3 +42,23 @@
     top: 10px;
     left: 5px;
 }
+/* rooms-img */
+.roomImg {
+    width: 100%;
+}
+.SubRoomImg img{
+    width: 100%;
+    height: 180px;    
+}
+.roomImg img {
+    width: 100%;
+    height: 100%;
+}
+.inclusions{
+    font-size: 12px;
+    font-weight: 500;
+
+}
+.inclusionRate {
+    font-size: 13px;
+}

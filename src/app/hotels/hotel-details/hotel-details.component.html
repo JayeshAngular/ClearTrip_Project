@@ -1,53 +1,93 @@
 <div class="container-fluid">
-    <!-- details section top -->
-    <div class="row m-2 justify-content-around">
-        <div class="col-md-6 mt-2">
-            <!-- hotel name and data -->
-            <div class="hotel-data mt-4 pb-3 border-bottom">
-                <h2 class="ms-2 ">{{hotelDetails.name}}</h2>
-            <p class="text-muted fs-5 ms-2 fw-medium">{{hotelDetails.starRating}}-star hotel - {{hotelDetails.locationPersuasion[0]}}-{{hotelDetails.locationDetail.name}} </p>
-            <p class="text-muted ms-2 fw-medium mt-0">Customer rating - {{hotelDetails.reviewSummary.cumulativeRating}}/5 ({{hotelDetails.reviewSummary.totalReviewCount}} Reviews)</p>
-            </div>
-            <!-- hotel offers rooms and breakfast -->
-            <div class="row mt-4 pb-3 border-bottom hoteloffers">
-                <div class="col-md-6 rooms" >
-                    <img src="../../../assets/logo/badge-check-icon.png">
-                    <p class="phead">Best in class rooms</p>
-                    <p class="pcontent">Rooms at this property is high rated</p>
-                </div>
-                <div class="col-md-6 breakfast">
-                    <img src="../../../assets/logo/breakf.png">
-                    <p class="phead" >Free breakfast on all plans</p>
-                    <p class="pcontent">Some plans include free breakfast</p>
-                    
-                </div>
-            </div>
+  <!-- details section top -->
+  <div class="row m-2 justify-content-around">
+    <div class="col-md-6 mt-2">
+      <!-- hotel name and data -->
+      <div class="hotel-data mt-4 pb-3 border-bottom">
+        <h2 class="ms-2 ">{{hotelDetails.name}}</h2>
+        <p class="text-muted fs-5 ms-2 fw-medium">{{hotelDetails.starRating}}-star hotel -
+          {{hotelDetails.locationPersuasion[0]}}-{{hotelDetails.locationDetail.name}} </p>
+        <p class="text-muted ms-2 fw-medium mt-0">Customer rating - {{hotelDetails.reviewSummary.cumulativeRating}}/5
+          ({{hotelDetails.reviewSummary.totalReviewCount}} Reviews)</p>
+      </div>
+      <!-- hotel offers rooms and breakfast -->
+      <div class="row mt-4 pb-3 border-bottom hoteloffers">
+        <div class="col-md-6 rooms">
+          <img src="../../../assets/logo/badge-check-icon.png">
+          <p class="phead">Best in class rooms</p>
+          <p class="pcontent">Rooms at this property is high rated</p>
         </div>
-        <!-- image section top -->
-        <div class="col-md-6 mt-2 p-2">
-                <img class="imgposition ms-5 border rounded-3" src={{hotelDetails.media[0].url}}>
+        <div class="col-md-6 breakfast">
+          <img src="../../../assets/logo/breakf.png">
+          <p class="phead">Free breakfast on all plans</p>
+          <p class="pcontent">Some plans include free breakfast</p>
+
         </div>
+      </div>
     </div>
+    <!-- image section top -->
+    <div class="col-md-6 mt-2 p-2">
+      <img class="imgposition ms-5 border rounded-3" src={{hotelDetails.media[0].url}}>
+    </div>
+  </div>
+
+  <!-- rooms-section -->
+  <div class="container">
     <div class="row mt-2">
       <div class="col-md-12">
-        <h2>select rooms</h2>
-
+        <h5>select rooms</h5>
+  
         <table class="table table-bordered mt-2 ">
-            <thead>
-              <tr class="table-active">
-                <th scope="col">Room Types</th>
-                <th scope="col">Options</th>
-                <th scope="col">Price</th> 
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td rowspan="3">1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-              </tr>
-            </tbody>
-          </table>
-      </div>  
+          <thead>
+            <tr class="table-active">
+              <th scope="col">Room Types</th>
+              <th scope="col">Options</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let item of hotelDetails?.roomList; let i = index">
+            <h4 class="text-center">{{item.roomName}}</h4>
+            <tr>
+              <td rowspan="4 w-50">
+                <div class="roomImg p-3">
+                  <img [src]="item.images[1]">
+                </div>
+                <div class="row">
+                  <div class="col-md-6 SubRoomImg p-3">
+                    <img [src]="item.images[0]">
+                  </div>
+                  <div class="col-md-6 SubRoomImg p-3">
+                    <img [src]="item.images[2]">
+                  </div>
+                </div>
+               
+            </tr>
+            <tr *ngFor="let package of item.ratePlans; let j = index">
+              <td class="w-25 p-2">
+                <div class="row">
+                  <h6>{{package.name}}</h6>
+                  <p class="text-muted mb-0 ms-1 inclusions" *ngFor="let inclusions of package?.inclusionsList">
+                   <span><i class="fa-solid fa-arrow-right"></i></span> {{inclusions.text}} </p>
+                </div>
+              </td>
+              <td class="w-25">
+                <div class="row w-100">
+                  <p class="text-muted ms-1">Price Per Night</p>
+                  <h6 class="mb-0 ms-1">₹ {{package.tariffs[0]?.priceMap.DEFAULT?.details[0].amount}}  <span class="fs-6 inclusionRate mb-0 ms-1 fw-bold text-muted">
+                    ( {{package.tariffs[0]?.priceMap.DEFAULT?.details[0].label}})
+                    </span></h6>
+                  <p class="ms-1">₹ {{package.tariffs[0]?.priceMap.DEFAULT?.details[1].amount}} <span class="fs-6 inclusionRate mb-0 ms-1 fw-bold text-muted">
+                    ( {{package.tariffs[0]?.priceMap.DEFAULT?.details[1].label}})
+                    </span> </p>
+                    <h5 class="ms-1 border-top">₹ {{package.tariffs[0]?.priceMap.DEFAULT?.details[2].amount}}<span class="fs-6 mb-0 ms-1 fst-italic text-info">
+                      ( {{package.tariffs[0]?.priceMap.DEFAULT?.details[2].label}})
+                      </span></h5>
+                      <p class="border-top text-center mb-0"><button class="btn btn-primary mt-2" (click)="selectRoom(i,j)">Book Room</button></p>
+                </div>   
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 </div>

@@ -1,0 +1,81 @@
+<div class="upperBack">
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 p-0 reviewSection1 border rounded shadow">
+            <div class="row">
+                <div class="col-md-9 p-2 m-1">
+                    <h4 class="ms-3">{{bookingObj.hotelName}}</h4>
+                    <p class="text-muted ms-3">Hotel Rated {{bookingObj.hotelRating}}</p>
+                    <p class="text-muted ms-3">{{bookingObj.hotelAddress}}</p>
+                </div>
+                <div class="col-md-2 p-2 ms-5 himg">
+                    <img [src]="bookingObj.hotelImage">
+                </div>
+            </div>
+            <!-- date section -->
+            <div class="dateSection mt-2">
+                <div class="row">
+                    <div class="col-md-4">
+                        <p class="pt-3 text-center mb-0">CHECK IN</p>
+                        <p class="text-center">{{hotelSearchDetails.checkInDate  | date:'fullDate' }}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="pt-3 text-center mb-0">CHECK OUT</p>
+                        <p class="text-center">{{hotelSearchDetails.checkOutDate | date:'fullDate'}}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="pt-3 text-center mb-0">{{hotelSearchDetails.roomType}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- room Details  -->
+            <div class="roomDetailSection mt-4">
+                <h3 class="mt-2 ms-2">{{roomInfo.roomName}}</h3>
+                <p class="fw-bold ms-2">{{hotelSearchDetails.roomType}}</p>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-3 border rounded m-1 text-center shadow roomFacilities"  *ngFor="let item of roomInfo.amenities">
+                        <p><span><i class="fa-solid fa-arrow-right"></i></span> {{item.name}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- imp information -->
+            <div class="imp-info mt-3">
+                <p class="fs-5 ms-3 mt-3 fw-bolder">Important Information</p>
+                <ul>
+                    <li>
+                        <p>Guests below 18 years of age are not allowed at the property</p>
+                    </li>
+                    <li>
+                        <p>Passport, Aadhar, Driving License and Govt. ID are accepted as ID proof(s)</p>
+                    </li>
+                    <li>
+                        <p>Smoking within the premises is not allowed</p>
+                    </li>
+                    <li>
+                        <p>
+                            Optional : Fee for full breakfast: approximately INR 949 per person|Fee for wired internet in public areas: INR 500 per night (rates may vary)|Airport shuttle fee: INR 840 per vehicle (one-way, maximum occupancy 3)|Rollaway bed fee: INR 1680 per night</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3 p-0 reviewSection1 border ms-4 rounded">
+            <p class="fw-bolder p-2 mt-3">Price Breakup</p>
+            <div class="p-1 border-bottom">
+                <p class="mt-1 ms-1">{{hotelSearchDetails.roomType}} &nbsp; &nbsp;<span class="ms-5 fw-bold"> ₹{{bookingObj.price}}</span></p>
+            </div>
+            <div class="p-1 border-bottom">
+                <p class="mt-1 ms-1">Discounted Price &nbsp; &nbsp;<span class="ms-5 fw-bold"> ₹{{bookingObj.discountedPrice}}</span></p>
+            </div>
+            <div class="p-1 border-bottom">
+                <p class="mt-1 ms-1">Total Taxes &nbsp; &nbsp;<span class="taxrate fw-bold"> ₹{{bookingObj.totalTaxes}}</span></p>
+            </div>
+            <div class="finalrate p-1 border-bottom">
+                <p class="mt-1 ms-1">Total Amount to be paid &nbsp; &nbsp; <span class="fw-bold"> ₹{{bookingObj.totalDiscountPrice}}</span></p>
+            </div>
+            <div >
+                <button class="paymentbtn" type="button">PayNow</button>
+            </div>
+        </div>
+    </div>
+</div>

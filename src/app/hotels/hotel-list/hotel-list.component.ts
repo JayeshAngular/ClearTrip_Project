@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/core/services/http.service';
+import { HotelService } from '../services/hotel.service';
 
 @Component({
   selector: 'app-hotel-list',
@@ -20,12 +21,13 @@ export class HotelListComponent {
   finalHotelList: any;
   hotelListCopy:any;
 
-  constructor(private activateRouter: ActivatedRoute, private httpSVC: HttpService, private router:Router) {
+  constructor(private activateRouter: ActivatedRoute, private httpSVC: HttpService, private router:Router, private hotelSVC:HotelService) {
     this.searchHotelObj.city = this.activateRouter.snapshot.queryParamMap.get('city');
     this.searchHotelObj.checkInDate = this.activateRouter.snapshot.queryParamMap.get('checkin');
     this.searchHotelObj.checkOutDate = this.activateRouter.snapshot.queryParamMap.get('checkout');
     this.searchHotelObj.selectedRoom = this.activateRouter.snapshot.queryParamMap.get('rooms');
-    console.log(this.searchHotelObj)
+    console.log(this.searchHotelObj);
+    this.hotelSVC.addHotelSearchDetails(this.searchHotelObj);
   }
 
   ngOnInit() {
@@ -104,6 +106,7 @@ export class HotelListComponent {
   // }
 
   selectHotels(hotelId:string) {
-    this.router.navigate(['/hotels/hotel-details'],{queryParams:{id:hotelId}})
+    this.router.navigate(['/hotels/hotel-details'],{queryParams:{id:hotelId}});
+
   }
 }
