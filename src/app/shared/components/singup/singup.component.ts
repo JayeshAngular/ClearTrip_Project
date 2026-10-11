@@ -86,6 +86,8 @@ obs:Subscription = new Subscription ();
     this.httpService.postDataToServer('users',data).subscribe((resp:any)=> {
       console.log("data saved succefully");
       alert("User Registered Succesfully");
+      this.emitSingInData.emit('Login')
+
   },
   error => {
 

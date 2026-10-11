@@ -40,6 +40,7 @@ export class HotelListComponent {
         this.finalHotelList = this.hotelList.filter((el: any) => el.locationDetail.name == this.searchHotelObj.city)
         console.log(this.finalHotelList)
         this.hotelListCopy = [...this.finalHotelList]
+        console.log(this.hotelListCopy)
       }
     })
   }
